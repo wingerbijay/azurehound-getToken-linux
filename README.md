@@ -12,27 +12,24 @@ You just need Python 3 and the `requests` library.
 
 ```bash
 pip install requests
-
-Usage
+````
+## Usage 
 Run the script from your terminal:
-
-Bash
+```bash
 python3 get_token.py
+````
 The script will output a device code and a URL (https://login.microsoft.com/device).
 
 Open that URL in your browser, enter the code, and log in to the target account. (Tip: Make sure your browser is also using a Windows User-Agent switcher extension just to be safe).
 
 The script will automatically poll in the background. Once you finish the browser login, it will print your Refresh Token.
 
-Feeding the Token to AzureHound
-Once you have the refresh token, you can pass it directly into AzureHound using the -r flag to map out the tenant without triggering the OS block:
-
-Bash
+## Feeding the Token to AzureHound
+Once you have the refresh token, you can pass it directly into AzureHound using the ````-r```` flag to map out the tenant without triggering the OS block:
+````
 ./azurehound -r "0.ARwA6Wg..." list --tenant "target-tenant.onmicrosoft.com" -o output.json
-Disclaimer
+````
+
+
+## Disclaimer
 Created for authorised lab testing and cybersecurity research purposes only.
-
-
-***
-roadrecon.db
-azure_bloodhound_data.json
